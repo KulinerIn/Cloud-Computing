@@ -1,12 +1,10 @@
-const express = require('express')
+const { response } = require('express')
+const express = require ('express')
+const app = express()
 
-const app = express
+const port = 8000
 
-const port = 3000
-
-
-// Test DB 
-const recipies = (request, response) => {
+//Database
     const Food = [
 
         {
@@ -179,24 +177,22 @@ const recipies = (request, response) => {
             Calorie: "?"
         }
     
-    ]
-}
+]
 
+// const Food =[
+//     {
+//         ID: "Kl01", 
+//         Name: "Klepon",
+//         DaerahAsal:"Jawa",
+//         Image:"",
+//         Calories:"",
+//     },
+// ]
 
-app.use(express.json())
-
-app.get('/', (request, response) => {
-    response,json(Food)
+app.get('/',(request, response) => {
+    response.json(Food)
 })
 
-app.post('/', (request, response) => {
-    const Food = request.body
-    if(!Food) response.status(403)
-    .send({error: "You're post is wrong"}) 
-    Foods.push(Food)
-    response.send(Food)   
-})
-
-app.listen(port, () =>{
-    console.log(`App is listening at http://localhost:${port}}`)
+app.listen(port, () => {
+    console.log(`App is listening att http://localhost:${port}`)
 })

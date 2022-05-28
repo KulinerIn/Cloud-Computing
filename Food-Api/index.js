@@ -2,197 +2,185 @@ const { response } = require('express')
 const express = require ('express')
 const app = express()
 
-const port = 8000
-
 //Database
-    const Food = [
+const Food = [
 
-        {
-            ID: "Kl01", 
-            Name: "Klepon",
-            DaerahAsal:"Jawa",
-            Image:"",
-            Recipie: [{
-                ingred1: "250gr Tepung Ketan",
-                ingred2: "50gr Tepung Beras",
-                ingred3: "Air",
-                ingred4: "Gula Merah",
-                ingred5: "Parutan Kelapa"
-            }],
-            Calorie: "100 - 120 Kalori"
+    {
+        ID: "1", 
+        Name: "Klepon",
+        DaerahAsal:"Jawa",
+        Image:"",
+        Recipie: [
+            { "name": "Tepung Ketan", "qty": "250g" },
+            { "name": "Tepung Beras", "qty": "50g" },
+            { "name": "Air", "qty": "" },
+            { "name": "Gula Merah", "qty": "" },
+            { "name": "Parutan Kelapa", "qty": "" },
+        ],
+        Calorie: "100 - 120 Kalori"
         },
     
-        {
-            ID: "Kl02",
-            Name: "Kue Lapis Sagu",
-            DaerahAsal: "Betawi",
-            Image:"",
-            Recipie: [{
-                ingred1: "300gr tepung sagu",
-                ingred2: "150gr terigu",
-                ingred3: "350gr Gula pasir",
-                ingred4: "1000ml santan kental",
-                ingred5: "Perasa secukupnya",
-                ingred6: "1sdm garam",
-                ingred7: "Pewarna makanan"
-            }],
-            Calorie: "?"
-        },
+    {
+        ID: "2",
+        Name: "Kue Lapis Sagu",
+        DaerahAsal: "Betawi",
+        Image:"",
+        Recipie: [
+            { "name": "Tepung Sagu", "qty": "300g" },
+            { "name": "Tepung Terigu", "qty": "150g" },
+            { "name": "Gula Pasir", "qty": "350g" },
+            { "name": "Santan Kental", "qty": "1000ml" },
+            { "name": "Garam", "qty": "1sdm" },
+            { "name": "pewarna Makanan", "qty": "secukupnya" }
+        ],
+        Calorie: "?"
+    },
     
-        {
-            ID: "Kl03",
-            Name: "Kue Putri Salju",
-            DaerahAsal: "",
-            Image:"",
-            Recipie: [{
-                ingred1: "2 butir telor",
-                ingred2: "200gr Butter",
-                ingred3: "300gr Margarin",
-                ingred4: "100gr gula halus",
-                ingred5: "50gr Keju Edam Parut",
-                ingred6: "50gr Keju Cheddar Parut",
-                ingred7: "650gr tepung terigu",
-                ingred8: "60gr susu bubuk",
-                ingred9: "65gr Maizena"
-            }],
-            Calorie: "?"
-        },
+    {
+        ID: "3",
+        Name: "Kue Putri Salju",
+        DaerahAsal: "",
+        Image:"",
+        Recipie: [
+            { "name": "Telor", "qty": "2 Butir" },
+            { "name": "Butter", "qty": "200g" },
+            { "name": "Margarin", "qty": "300g" },
+            { "name": "Gula Halus", "qty": "100g" },
+            { "name": "Keju Edam parut", "qty": "50gr" },
+            { "name": "Keju Cheddar Parut", "qty": "50gr" },
+            { "name": "Tepung Terigu", "qty": "650gr"},
+            { "name": "Susu Bubuk", "qty": "60gr"},
+            { "name": "Maizena", "qty": "65gr"}
+        ],
+        Calorie: "?"
+    },
     
-        {
-            ID: "Kl04",
-            Name: "Lapis Legit",
-            DaerahAsal:"",
-            Image:"",
-            Recipie: [{
-                ingred1: "20 butir Kuning Telor",
-                ingred2: "300gr Gula Halus",
-                ingred3: "350gr Butter",
-                ingred4: "60gr Tepung terigu",
-                ingred5: "20gr Susu Bubuk",
-                ingred6: "1sdt Bumbu Spekuk",
-                ingred7: "3sdm Susu Kental Manis"
-            }],
-            Calorie: "?"
-        },
+    {
+        ID: "4",
+        Name: "Lapis Legit",
+        DaerahAsal:"",
+        Image:"",
+        Recipie: [
+            { "name": "Kuning Telor", "qty": "20 butir"},
+            { "name": "Gula Halus", "qty": "300gr" },
+            { "name": "Butter", "qty": "350g" },
+            { "name": "Tepung Terigu", "qty": "60gr"},
+            { "name": "Susu Bubuk", "qty": "20gr"},
+            { "name": "Bumbu Spekuk", "qty": "1sdt"},
+            { "name": "Susu Kental Manis", "qty": "3sdm"}
+        ],
+        Calorie: "?"
+    },
     
-        {
-            ID: "Kl05",
-            Name: "Martabak Telor",
-            DaerahAsal:"",
-            Image:"",
-            Recipie: [{
-                ingred1: "20 butir Kuning Telor",
-                ingred2: "300gr Gula Halus",
-                ingred3: "350gr Butter",
-                ingred4: "60gr Tepung terigu",
-                ingred5: "20gr Susu Bubuk",
-                ingred6: "1sdt Bumbu Spekuk",
-                ingred7: "3sdm Susu Kental Manis"
-            }],
-            Calorie: "?"
-        },
+    {
+        ID: "5",
+        Name: "Martabak Telor",
+        DaerahAsal:"",
+        Image:"",
+        Recipie: [
+            { "name": "Kuning Telor", "qty": "20 butir"},
+            { "name": "Gula Halus", "qty": "300gr" },
+            { "name": "Butter", "qty": "350g" },
+            { "name": "Tepung Terigu", "qty": "60gr"},
+            { "name": "Susu Bubuk", "qty": "20gr"},
+            { "name": "Bumbu Spekuk", "qty": "1sdt"},
+            { "name": "Susu Kental Manis", "qty": "3sdm"}
+        ],
+        Calorie: "?"
+    },
+
+    {
+        ID: "6",
+        Name: "Martabak Manis",
+        DaerahAsal:"",
+        Image:"",
+        Recipie: [
+            { "name": "Kuning Telor", "qty": "20 butir"},
+            { "name": "Gula Halus", "qty": "300gr" },
+            { "name": "Butter", "qty": "350g" },
+            { "name": "Tepung Terigu", "qty": "60gr"},
+            { "name": "Susu Bubuk", "qty": "20gr"},
+            { "name": "Bumbu Spekuk", "qty": "1sdt"},
+            { "name": "Susu Kental Manis", "qty": "3sdm"}
+        ],
+        Calorie: "?"
+    },
+
+    {
+        ID: "7",
+        Name: "Nastar",
+        DaerahAsal:"",
+        Image:"",
+        Recipie: [
+            { "name": "Kuning Telor", "qty": "20 butir"},
+            { "name": "Gula Halus", "qty": "300gr" },
+            { "name": "Butter", "qty": "350g" },
+            { "name": "Tepung Terigu", "qty": "60gr"},
+            { "name": "Susu Bubuk", "qty": "20gr"},
+            { "name": "Bumbu Spekuk", "qty": "1sdt"},
+            { "name": "Susu Kental Manis", "qty": "3sdm"}
+        ],
+        Calorie: "?"
+    },
+
+    {
+        ID: "8",
+        Name: "Onde-Onde",
+        DaerahAsal:"",
+        Image:"",
+        Recipie: [
+            { "name": "Kuning Telor", "qty": "20 butir"},
+            { "name": "Gula Halus", "qty": "300gr" },
+            { "name": "Butter", "qty": "350g" },
+            { "name": "Tepung Terigu", "qty": "60gr"},
+            { "name": "Susu Bubuk", "qty": "20gr"},
+            { "name": "Bumbu Spekuk", "qty": "1sdt"},
+            { "name": "Susu Kental Manis", "qty": "3sdm"}
+        ],
+        Calorie: "?"
+    },
 
         {
-            ID: "Kl06",
-            Name: "Martabak Manis",
-            DaerahAsal:"",
-            Image:"",
-            Recipie: [{
-                ingred1: "20 butir Kuning Telor",
-                ingred2: "300gr Gula Halus",
-                ingred3: "350gr Butter",
-                ingred4: "60gr Tepung terigu",
-                ingred5: "20gr Susu Bubuk",
-                ingred6: "1sdt Bumbu Spekuk",
-                ingred7: "3sdm Susu Kental Manis"
-            }],
-            Calorie: "?"
-        },
-
-        {
-            ID: "Kl07",
-            Name: "Nastar",
-            DaerahAsal:"",
-            Image:"",
-            Recipie: [{
-                ingred1: "20 butir Kuning Telor",
-                ingred2: "300gr Gula Halus",
-                ingred3: "350gr Butter",
-                ingred4: "60gr Tepung terigu",
-                ingred5: "20gr Susu Bubuk",
-                ingred6: "1sdt Bumbu Spekuk",
-                ingred7: "3sdm Susu Kental Manis"
-            }],
-            Calorie: "?"
-        },
-
-        {
-            ID: "Kl08",
-            Name: "Onde-Onde",
-            DaerahAsal:"",
-            Image:"",
-            Recipie: [{
-                ingred1: "20 butir Kuning Telor",
-                ingred2: "300gr Gula Halus",
-                ingred3: "350gr Butter",
-                ingred4: "60gr Tepung terigu",
-                ingred5: "20gr Susu Bubuk",
-                ingred6: "1sdt Bumbu Spekuk",
-                ingred7: "3sdm Susu Kental Manis"
-            }],
-            Calorie: "?"
-        },
-
-        {
-            ID: "Kl09",
+            ID: "9",
             Name: "Pukis",
             DaerahAsal:"",
             Image:"",
-            Recipie: [{
-                ingred1: "20 butir Kuning Telor",
-                ingred2: "300gr Gula Halus",
-                ingred3: "350gr Butter",
-                ingred4: "60gr Tepung terigu",
-                ingred5: "20gr Susu Bubuk",
-                ingred6: "1sdt Bumbu Spekuk",
-                ingred7: "3sdm Susu Kental Manis"
-            }],
+            Recipie: [
+                { "name": "Kuning Telor", "qty": "20 butir"},
+                { "name": "Gula Halus", "qty": "300gr" },
+                { "name": "Butter", "qty": "350g" },
+                { "name": "Tepung Terigu", "qty": "60gr"},
+                { "name": "Susu Bubuk", "qty": "20gr"},
+                { "name": "Bumbu Spekuk", "qty": "1sdt"},
+                { "name": "Susu Kental Manis", "qty": "3sdm"}
+            ],
             Calorie: "?" 
         },
 
         {
-            ID: "Kl10",
+            ID: "10",
             Name: "Serabi",
             DaerahAsal:"",
             Image:"",
-            Recipie: [{
-                ingred1: "20 butir Kuning Telor",
-                ingred2: "300gr Gula Halus",
-                ingred3: "350gr Butter",
-                ingred4: "60gr Tepung terigu",
-                ingred5: "20gr Susu Bubuk",
-                ingred6: "1sdt Bumbu Spekuk",
-                ingred7: "3sdm Susu Kental Manis"
-            }],
+            Recipie: [
+                { "name": "Kuning Telor", "qty": "20 butir"},
+                { "name": "Gula Halus", "qty": "300gr" },
+                { "name": "Butter", "qty": "350g" },
+                { "name": "Tepung Terigu", "qty": "60gr"},
+                { "name": "Susu Bubuk", "qty": "20gr"},
+                { "name": "Bumbu Spekuk", "qty": "1sdt"},
+                { "name": "Susu Kental Manis", "qty": "3sdm"}
+            ],
             Calorie: "?"
         }
     
 ]
 
-// const Food =[
-//     {
-//         ID: "Kl01", 
-//         Name: "Klepon",
-//         DaerahAsal:"Jawa",
-//         Image:"",
-//         Calories:"",
-//     },
-// ]
-
-app.get('/',(request, response) => {
-    response.json(Food)
+app.get('/:id',(request, response) => {
+    response.json(Food[0])
 })
 
-app.listen(port, () => {
-    console.log(`App is listening att http://localhost:${port}`)
+const port = process.env.port || 8000;
+app.listen(port, _=> {
+    console.log(`App is listening at ${port}`)
 })

@@ -14,9 +14,9 @@ app.get("/", async (req, res) =>{
     res.json({status: "Yummy, food is ready"});
 });
 
-app.get("/:name", async (req, res) => {
-    const query = "SELECT * FROM food WHERE name = ?";
-    pool.query(query, [ req.params.name ] , (error, results) => {
+app.get("/:id", async (req, res) => {
+    const query = "SELECT * FROM food WHERE id = ?";
+    pool.query(query, [ req.params.id ] , (error, results) => {
         // console.log(error);
         // console.log(process.env.DB_NAME);
         if(error){

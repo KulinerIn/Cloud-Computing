@@ -176,8 +176,8 @@ const Food = [
     
 ]
 
-app.get('/:id',(request, response) => {
-    response.json(Food[0])
+app.get('/',(request, response) => {
+    response.json(Food[1])
 })
 
 const port = process.env.port || 8000;

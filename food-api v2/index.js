@@ -1,3 +1,4 @@
+const { query } = require("express");
 const express = require("express");
 const mysql = require("mysql");
 const dotenv = require("dotenv").config();
@@ -15,80 +16,106 @@ app.get("/", async (req, res) =>{
 });
 
 app.get("/:id", async (req, res) => {
-    const query = "SELECT * FROM food f JOIN recipe r ON r.id = f.recipe_id WHERE f.id = ?";
-    // const query = "SELECT ri.ingredient_id AS id, i.name, ri.amount FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id JOIN recipe r ON ri.recipe_id = r.id WHERE ri.recipe_id = ?"
-    //const query = "SELECT f.id, f.name, f.alt_name, f.image, f.description, f.origin, r.steps, ri.ingredient_id AS ingredient_id, i.name AS ingredient_name, ri.amount from food f JOIN recipe r ON f.recipe_id = r.id JOIN recipe_ingredient ri ON r.id = ri.recipe_id INNER JOIN ingredient i ON ri.ingredient_id = i.id WHERE f.id = ?"
+    const food = "SELECT * FROM food WHERE id = ?";
     pool.query(query, [ req.params.id ], (error, results) => {
-        // console.log(error);
-        // console.log(process.env.DB_NAME);
-        const food = "SELECT ri.ingredient_id AS ingredient_id, i.name AS ingredient_name, ri.amount FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id JOIN recipe r ON ri.recipe_id = r.id WHERE ri.recipe_id = r.id"
-        pool.query(food, [req.params.id], (error, results) => {
-            if(error){
-                res.json({status: error});
-            } else {
-                res.json(results);
-            };
-        });
+        console.log("FOOD QUERY")
         if(error){
             res.json({status: error});
         } else {
-            res.json(results);
+            const result = results[0]
+
+            recipe_data = get_recipe(result.recipe_id) 
+
+            if (recipe_data.error) {
+                res.json({
+                    data: null,
+                    error: recipe_data.error
+                })
+                return
+            }
+
+            var success_response = {
+                    id: result.id,
+                    name: result.name,
+                    alt_name: result.alt_name,
+                    image: result.image,
+                    description: result.description,
+                    origin: result.origin,
+                    recipe: recipe_data,
+                };
+
+            res.json(success_response);
         }
     });
 });
 
-function success_response(result) {
-    {
-        var data = {
-            id: result.id,
-            name: result.name,
-            alt_name: result.alt_name,
-            image: result.image,
-            description: result.description,
-            origin: result.origin,
-            ingredients: get_recipe_ingredients(result.recipe_id)
-        };
-    }
-}
-
-function get_recipe_ingredients(food){
-    food = "SELECT ri.ingredient_id AS ingredient_id, i.name AS ingredient_name, ri.amount FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id JOIN recipe r ON ri.recipe_id = r.id WHERE ri.recipe_id = r.id"
-    pool.food(food, (error, results) => {
+function get_recipe(recipe_id) {
+    query = "SELECT * FROM recipe WHERE recipe.id = ?";
+    pool.query(query, [ recipe_id ], (error, results) => {
+        console.log("RECIPE QUERY")
         if(error){
-            res.json({status: error});
+            return ({
+                error: error
+            })
         } else {
-            res.json(results);
-        };
+            const result = results[0]
+
+            ingredient_list = get_recipe_ingredients(result.id)
+
+            if (ingredient_list.error) {
+                return ({
+                    error: ingredient_list.error
+                })
+            }
+
+            var recipe = {
+                steps: result.steps,
+                ingredients: ingredient_list
+            }
+
+            return recipe
+        }
     });
 }
 
-// const query = await db.query(
-//     sql`
-//       SELECT
-//         f.id,
-//         f.name,
-//         f.alt_name,
-//         f.image,
-//         f.description,
-//         f.origin,
-//         ${nestQuerySingle(
-//           sql`
-//             SELECT r.steps
-//             FROM recipe r WHERE r.id = f.recipe_id
-//           `
-//         )} AS manager,
-//         ${nestQuery(
-//           sql`
-//             SELECT ri.ingredient_id AS id, i.name, ri.amount 
-//             FROM recipe_ingredient ri
-//             JOIN ingredient i USING (id)
-//             WHERE ri.recipe_id = r.id
-//           `
-//         )} AS ingredients
-//       FROM food f
-//       WHERE f.id = ?
-//     `,
-//   );
+function get_recipe_ingredients(recipe_id){
+    query = "SELECT * FROM recipe_ingredients WHERE recipe_ingredients.recipe_id = ?";   
+    pool.query(query, [recipe_id], (error, results) => {
+        console.log("RECIPE INGREDIENTS QUERY")
+        if(error){
+            return ({
+                error: error
+            })
+        } else {
+
+            var ingredients = [];
+            results.forEach(function (ingredient) {
+
+                query = "SELECT * FROM ingredients WHERE ingredients.id = ?";
+                pool.query(query, [id], (error, results) => {
+                    console.log("INGREDIENT QUERY")
+                    if (error){
+                        return ({
+                            error: error
+                        })
+                    } else {
+                        var data = {
+                            amount: ingredient.amount,
+                            ingredient: {
+                                id: results[0].id,
+                                name: results[0].name
+                            }
+                        }
+                        ingredients.push(data)
+                    }
+                })
+
+            })
+            
+            return ingredients
+        }
+    });
+}
 
 const pool = mysql.createPool({
     user: process.env.DB_USER,
@@ -97,10 +124,3 @@ const pool = mysql.createPool({
     host: process.env.INSTANCE_CONNECTION_NAME,
     port: process.env.DB_PORT
 });
-
-
-// const query = "SELECT * FROM food f JOIN recipe r ON f.recipe_id = r.id JOIN recipe_ingredient ri ON r.id = ri.recipe_id JOIN ingredient i ON ri.ingredient_id = i.id WHERE f.id = ?" 
-
-// SELECT ri.ingredient_id AS id, i.name, ri.amount FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id JOIN recipe r ON ri.recipe_id = r.id WHERE ri.recipe_id = 
-
-// SELECT f.id, f.name, f.alt_name, f.image, f.description, f.origin, r.steps, ri.ingredient_id AS ingredient_id, i.name AS ingredient_name, ri.amount from food f JOIN JOIN recipe r ON f.recipe_id = r.id JOIN recipe_ingredient ri ON r.id = ri.recipe_id JOIN ingredient i ON ri.ingredient_id = i.id WHERE f.id = ?

@@ -36,13 +36,20 @@ function success_response(result) {
             image: result.image,
             description: result.description,
             origin: result.origin,
-            ingredients: get_recipe_ingredients(result.id)
+            ingredients: get_recipe_ingredients(result.recipe_id)
         };
     }
 }
 
 function get_recipe_ingredients(food){
     food = "SELECT ri.ingredient_id AS id, i.name, ri.amount FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id JOIN recipe r ON ri.recipe_id = r.id WHERE ri.recipe_id = r.id"
+    pool.food(query, req.params.id, (error, results) => {
+        if(error){
+            res.json({status: error});
+        } else {
+            res.json(results[0]);
+        };
+    });
 }
 
 // const query = await db.query(
@@ -82,6 +89,6 @@ const pool = mysql.createPool({
 });
 
 
-// const test = "SELECT * FROM food f JOIN recipe r ON f.recipe_id = r.id JOIN recipe_ingredient ri ON ri.recipe_id = r.id JOIN ingredient i ON i.id = ri.ingredient_id WHERE f.id = ?" 
+// const query = "SELECT * FROM food f JOIN recipe r ON f.recipe_id = r.id JOIN recipe_ingredient ri ON r.id = ri.recipe_id JOIN ingredient i ON ri.ingredient_id = i.id WHERE f.id = ?" 
 
 // SELECT ri.ingredient_id AS id, i.name, ri.amount FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id JOIN recipe r ON ri.recipe_id = r.id WHERE ri.recipe_id = 

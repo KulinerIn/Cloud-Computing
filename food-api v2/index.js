@@ -21,6 +21,14 @@ app.get("/:id", async (req, res) => {
     pool.query(query, [ req.params.id ], (error, results) => {
         // console.log(error);
         // console.log(process.env.DB_NAME);
+        const food = "SELECT ri.ingredient_id AS ingredient_id, i.name AS ingredient_name, ri.amount FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id JOIN recipe r ON ri.recipe_id = r.id WHERE ri.recipe_id = r.id"
+        pool.query(food, [req.params.id], (error, results) => {
+            if(error){
+                res.json({status: error});
+            } else {
+                res.json(results);
+            };
+        });
         if(error){
             res.json({status: error});
         } else {
@@ -44,8 +52,8 @@ function success_response(result) {
 }
 
 function get_recipe_ingredients(food){
-    food = "SELECT ri.ingredient_id AS id, i.name, ri.amount FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id JOIN recipe r ON ri.recipe_id = r.id WHERE ri.recipe_id = r.id"
-    pool.food(query, [req.params.id], (error, results) => {
+    food = "SELECT ri.ingredient_id AS ingredient_id, i.name AS ingredient_name, ri.amount FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id JOIN recipe r ON ri.recipe_id = r.id WHERE ri.recipe_id = r.id"
+    pool.food(food, (error, results) => {
         if(error){
             res.json({status: error});
         } else {

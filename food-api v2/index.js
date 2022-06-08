@@ -16,13 +16,15 @@ app.get("/", async (req, res) =>{
 
 app.get("/:id", async (req, res) => {
     const query = "SELECT * FROM food f JOIN recipe r ON r.id = f.recipe_id WHERE f.id = ?";
-    pool.query(query, [ req.params.id ] , (error, results) => {
+    // const query = "SELECT ri.ingredient_id AS id, i.name, ri.amount FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id JOIN recipe r ON ri.recipe_id = r.id WHERE ri.recipe_id = ?"
+    //const query = "SELECT f.id, f.name, f.alt_name, f.image, f.description, f.origin, r.steps, ri.ingredient_id AS ingredient_id, i.name AS ingredient_name, ri.amount from food f JOIN recipe r ON f.recipe_id = r.id JOIN recipe_ingredient ri ON r.id = ri.recipe_id INNER JOIN ingredient i ON ri.ingredient_id = i.id WHERE f.id = ?"
+    pool.query(query, [ req.params.id ], (error, results) => {
         // console.log(error);
         // console.log(process.env.DB_NAME);
         if(error){
             res.json({status: error});
         } else {
-            res.json(results[0]);
+            res.json(results);
         }
     });
 });
@@ -43,11 +45,11 @@ function success_response(result) {
 
 function get_recipe_ingredients(food){
     food = "SELECT ri.ingredient_id AS id, i.name, ri.amount FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id JOIN recipe r ON ri.recipe_id = r.id WHERE ri.recipe_id = r.id"
-    pool.food(query, req.params.id, (error, results) => {
+    pool.food(query, [req.params.id], (error, results) => {
         if(error){
             res.json({status: error});
         } else {
-            res.json(results[0]);
+            res.json(results);
         };
     });
 }
@@ -92,3 +94,5 @@ const pool = mysql.createPool({
 // const query = "SELECT * FROM food f JOIN recipe r ON f.recipe_id = r.id JOIN recipe_ingredient ri ON r.id = ri.recipe_id JOIN ingredient i ON ri.ingredient_id = i.id WHERE f.id = ?" 
 
 // SELECT ri.ingredient_id AS id, i.name, ri.amount FROM recipe_ingredient ri JOIN ingredient i ON ri.ingredient_id = i.id JOIN recipe r ON ri.recipe_id = r.id WHERE ri.recipe_id = 
+
+// SELECT f.id, f.name, f.alt_name, f.image, f.description, f.origin, r.steps, ri.ingredient_id AS ingredient_id, i.name AS ingredient_name, ri.amount from food f JOIN JOIN recipe r ON f.recipe_id = r.id JOIN recipe_ingredient ri ON r.id = ri.recipe_id JOIN ingredient i ON ri.ingredient_id = i.id WHERE f.id = ?

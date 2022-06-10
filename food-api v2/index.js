@@ -34,8 +34,9 @@ app.get("/:id", async (req, res) => {
                             description: results[0].description,
                             origin: results[0].origin,
                             ingredient: ingredient,
-                            recipe: results[0].steps
-                        }
+                            recipe: results[0].steps,
+                        },
+                        error: false
                     });
                 }
             

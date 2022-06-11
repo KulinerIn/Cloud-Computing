@@ -23,10 +23,6 @@ INSERT INTO recipe(steps) VALUES
     6. Tuang 100 ml adonan hijau, kukus 5 menit. Lakukan hal yang sama, dua kali adonan putih, satu kali adonan hijau.
     7. Terakhir tuang 100 ml adonan putih yang sudah ditambahkan pewarna merah. 
     8. Kukus diatas api sedang selama 20 menit sampai matang lalu matikan kompor. Angkat kue dan biarkan dinginkan."),
-    ("1. Siapkan wadah, aduk margarin menggunakan mixer hingga mengembang, campurkan tepung terigu dan tepung maizena yang sudah diayak, sambil diaduk terus menggunakan mixer sampai mengembang. 
-    2. Masukkan telur ayam satu persatu kedalam adonan diatas, aduk sampai tercampur rata bersama parutan keju. 
-    3. Pipihkan adonan, sambil dicetak sesuai bentuk yang diinginkan. Panaskan oven, panggang kue dengan suhu 160 derajat selama kurang lebih 15 menit. 
-    4. Angkat, dan biarkan sampai suhu ruang, lalu taburkan gula halus diatasnya."),
     ("1. Kocok kuning telur dan gula halus hingga putih sekitar 7-10 menit. 
     2. Masukkan margarin, dalam kecepatan rendah kocok hingga tercampur. 
     3. Masukkan mentega, kocok rata. Masukkan terigu, bubuk spekuk, vanili, aduk rata. 
@@ -37,18 +33,18 @@ INSERT INTO recipe(steps) VALUES
     8. Keluarkan, masukkan adonan satu sendok sayur lagi, ratakan. 
     9. Panggang lagi. Lakukan hingga semua adonan habis. Panas oven sekira 100-150 derajat C. 
     10. Jika sudah matang, keluarkan dari cetakan dan biarkan dingin. Potong potong dalam keadaan dingin"),
-    ("1. Buat kulit martabak terlebih dahulu, campur tepung terigu dan garam. Tuang air sedikit demi sedikit sambil diuleni sampai kalis. Tambahkan minyak goreng. Uleni sampai elastis.
-    2. Timbang masing-masing 75 gram. Bulatkan. rendam dalam minyak goreng selama dua jam. 
-    3. Buat isian martabak, tumis bawang putih, bawang merah, dan cabai merah sampai harum. Tambahkan daging giling dan ayam giling. Aduk sampai berubah warna. 
-    4. Masukkan kari bubuk, garam, merica bubuk, dan gula pasir. Aduk sampai meresap. Tambahkan daun bawang. Aduk rata. Sisihkan. 
-    5. Pipihkan kulit dan giling tipis. Sisihkan.
-    6. Panaskan minyak dalam teflon. Letakkan selembar kulit. Beri campuran isi. Lipat. Goreng dengan sedikit minyak (jangan sampai terendam) sambil disiram-siram minyak sampai matang."),
     ("1. Kocok telur dan gula hingga mengental dan mengembang. Tuang susu cair, kocok dengan kecepatan rendah. 
     2. Tambahkan dengan tepung terigu, ragi, baking powder, dan garam. Kocok menggunakan mixer dengan kecepatan rendah hingga merata. 
     3. Tambahkan margarin, aduk rata.
     4. Diamkan adonan selama 1 jam atau hingga mengembang. Panaskan teflon dan tuang adonan, ratakan, dan biarkan hingga berbusa. 
     5. Taburi dengan gula pasir di atas permukaan martabak manis, masak hingga matang. Angkat. 
     6. Olesi martabak dengan margarin dan topping yang diinginkan"),
+    ("1. Buat kulit martabak terlebih dahulu, campur tepung terigu dan garam. Tuang air sedikit demi sedikit sambil diuleni sampai kalis. Tambahkan minyak goreng. Uleni sampai elastis.
+    2. Timbang masing-masing 75 gram. Bulatkan. rendam dalam minyak goreng selama dua jam. 
+    3. Buat isian martabak, tumis bawang putih, bawang merah, dan cabai merah sampai harum. Tambahkan daging giling dan ayam giling. Aduk sampai berubah warna. 
+    4. Masukkan kari bubuk, garam, merica bubuk, dan gula pasir. Aduk sampai meresap. Tambahkan daun bawang. Aduk rata. Sisihkan. 
+    5. Pipihkan kulit dan giling tipis. Sisihkan.
+    6. Panaskan minyak dalam teflon. Letakkan selembar kulit. Beri campuran isi. Lipat. Goreng dengan sedikit minyak (jangan sampai terendam) sambil disiram-siram minyak sampai matang."),
     ("1. Untuk selai nanas, parut atau blender nanas yang telah dibersihkan, masukkan ke dalam wajan. Tambahkan cengkih dan kayu manis. Masak hingga air menggering sambil terus diaduk.  
     2. Masukkan gula dan garam, masak kembali hingga mengering sambil diaduk agar tidak gosong. Angkat, sisihkan cengkih dan kayu manisnya, dinginkan.  Bulatkan selai dengan berat empat gram. Sisihkan.  
     3. Mikser mentega, gula, dan telur sebentar hingga rata. Matikan mikser lalu masukkan susu, tepung maizena, tepung terigu, keju, garam, dan vanili, aduk rata. 
@@ -70,7 +66,11 @@ INSERT INTO recipe(steps) VALUES
     6. Tunggu sampai matang, angkat, dan sajikan."),
     ("1. Campur tepung beras, tepung kanji, dan tepung terigu dalam satu mangkuk. Tambahkan gula pasir dan garam, aduk rata. 
     2. Masukkan santan cair sedikit demi sedikit sambil terus diaduk hingga membentuk adonan. Kemudian, masukkan santan kental, aduk hingga rata. 
-    3. Panaskan cetakan serabi atau teflon, olesi dengan ampas kelapa agar tidak lengket. Tuang satu sendok sayur serabi, kemudian tutup. Masak hingga matang.");
+    3. Panaskan cetakan serabi atau teflon, olesi dengan ampas kelapa agar tidak lengket. Tuang satu sendok sayur serabi, kemudian tutup. Masak hingga matang."),
+    ("1. Siapkan wadah, aduk margarin menggunakan mixer hingga mengembang, campurkan tepung terigu dan tepung maizena yang sudah diayak, sambil diaduk terus menggunakan mixer sampai mengembang. 
+    2. Masukkan telur ayam satu persatu kedalam adonan diatas, aduk sampai tercampur rata bersama parutan keju. 
+    3. Pipihkan adonan, sambil dicetak sesuai bentuk yang diinginkan. Panaskan oven, panggang kue dengan suhu 160 derajat selama kurang lebih 15 menit. 
+    4. Angkat, dan biarkan sampai suhu ruang, lalu taburkan gula halus diatasnya.");
 
 
 -- Create ingredient Table
@@ -176,22 +176,25 @@ INSERT INTO recipe_ingredient(recipe_id,ingredient_id,amount) VALUES
     ("2","15","50ml"),
     ("2","6","1 lembar"),
     ("2","16","1 tetes"),
-    ("3","17","500gr"),
-    ("3","18","60gr"),
-    ("3","19","500gr"),
-    ("3","20","250gr"),
-    ("3","21","4 butir"),
-    ("3","22","400gr"),
-    ("4","23","30 butir"),
-    ("4","22","560gr"),
-    ("4","19","300gr"),
-    ("4","24","400gr"),
-    ("4","17","210gr"),
-    ("4","25","9 sendok makan"),
-    ("4","26","2 sendok makan"),
-    ("4","27","8 butir"),
-    ("4","28","secukupnya"),
-    ("5","17","200gr"),
+    ("3","23","30 butir"),
+    ("3","22","560gr"),
+    ("3","19","300gr"),
+    ("3","24","400gr"),
+    ("3","17","210gr"),
+    ("3","25","9 sendok makan"),
+    ("3","26","2 sendok makan"),
+    ("3","27","8 butir"),
+    ("3","28","secukupnya"),
+    ("4","38","2 butir"),
+    ("4","13","2 sendok makan"),
+    ("4","41","150ml"),
+    ("4","17","150gr"),
+    ("4","56","1/2 sendok teh"),
+    ("4","42","2 sendok teh"),
+    ("4","8","1/4 sendok teh"),
+    ("4","19","1 sendok makan"),
+    ("4","43","1 sendok teh"),
+    ("4","17","200gr"),
     ("5","8","2 sendok teh"),
     ("5","1","140ml"),
     ("5","29","500ml"),
@@ -207,50 +210,47 @@ INSERT INTO recipe_ingredient(recipe_id,ingredient_id,amount) VALUES
     ("5","38","2 butir"),
     ("5","39","50gr"),
     ("5","40","50gr"),
-    ("6","38","2 butir"),
-    ("6","13","2 sendok makan"),
-    ("6","41","150ml"),
-    ("6","17","150gr"),
-    ("6","56","1/2 sendok teh"),
-    ("6","42","2 sendok teh"),
-    ("6","8","1/4 sendok teh"),
-    ("6","19","1 sendok makan"),
-    ("6","43","1 sendok teh"),
-    ("7","44","2 buah"),
-    ("7","45","6 butir"),
-    ("7","46","6 buah"),
-    ("7","13","200gr"),
-    ("7","8","1/2 sendok teh"),
-    ("7","24","350gr"),
-    ("7","22","50gr"),
-    ("7","23","2 butir"),
-    ("7","47","50gr"),
-    ("7","18","50gr"),
-    ("7","17","375gr"),
-    ("7","48","90gr"),
-    ("7","49","1/2 sendok teh"),
-    ("8","50","75gr"),
-    ("8","13","115gr"),
-    ("8","8","3/4 sendok teh"),
-    ("8","6","1 lembar"),
-    ("8","9","200ml"),
-    ("8","51","250gr"),
-    ("8","52","50gr"),
-    ("8","1","120ml"),
-    ("8","53","75gr"),
-    ("8","54","800ml"),
-    ("9","17","250gr"),
-    ("9","13","200gr"),
-    ("9","56","1 sendok teh"),
-    ("9","38","4 butir"),
-    ("9","9","300ml"),
-    ("9","19","3 sendok makan"),
-    ("10","12","175gr"),
-    ("10","55","25gr"),
-    ("10","17","50gr"),
-    ("10","13","2 sendok makan"),
-    ("10","8","2 sendok teh"),
-    ("10","9","525ml");
+    ("6","44","2 buah"),
+    ("6","45","6 butir"),
+    ("6","46","6 buah"),
+    ("6","13","200gr"),
+    ("6","8","1/2 sendok teh"),
+    ("6","24","350gr"),
+    ("6","22","50gr"),
+    ("6","23","2 butir"),
+    ("6","47","50gr"),
+    ("6","18","50gr"),
+    ("6","17","375gr"),
+    ("6","48","90gr"),
+    ("6","49","1/2 sendok teh"),
+    ("7","50","75gr"),
+    ("7","13","115gr"),
+    ("7","8","3/4 sendok teh"),
+    ("7","6","1 lembar"),
+    ("7","9","200ml"),
+    ("7","51","250gr"),
+    ("7","52","50gr"),
+    ("7","1","120ml"),
+    ("7","53","75gr"),
+    ("7","54","800ml"),
+    ("8","17","250gr"),
+    ("8","13","200gr"),
+    ("8","56","1 sendok teh"),
+    ("8","38","4 butir"),
+    ("8","9","300ml"),
+    ("8","19","3 sendok makan"),
+    ("9","12","175gr"),
+    ("9","55","25gr"),
+    ("9","17","50gr"),
+    ("9","13","2 sendok makan"),
+    ("9","8","2 sendok teh"),
+    ("9","9","525ml"),
+    ("10","17","500gr"),
+    ("10","18","60gr"),
+    ("10","19","500gr"),
+    ("10","20","250gr"),
+    ("10","21","4 butir"),
+    ("10","22","400gr");
 
 -- Create food Table
 
@@ -272,12 +272,11 @@ CREATE TABLE food (
     INSERT INTO food (name, alt_name, image, description, origin, recipe_id) VALUES
     ("Klepon", "Onde-Onde", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Klepon.jpg", "Klepon merupakan jajanan tradisional Indonesia yang umumnya terbuat dari tepung ketan putih yang dibentuk seperti bola-bola kecil dengan isi gula merah dan ditaburi parutan kelapa", "Pulau Jawa", "1"),
     ("Kue Lapis Sagu", "Kue Pepe", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Lapis_sagu.jpg", "Kue pepe adalah kue tradisional Betawi dengan penampilan cantik berlapis-lapis aneka warna yang tembus pandang atau jernih. Biasanya terdiri dari warna putih, kehijauan, hijau tua, dan diakhiri merah tua, atau putih, kecoklatan, ditutup coklat tua pada lapisan teratas.", "Betawi", "2"),
-    ("Kue Putri Salju", "Vanillekipferl", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Kue_putri_salju.jpg", "Kue putri salju adalah sejenis kue kering yang berbentuk bulan sabit dan di atasnya diselimuti dengan gula halus seperti salju.", "Austria", "3"),
-    ("Lapis Legit", "[Spikuk, Spekkoek]", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Lapis_legit.jpg", "Lapis legit terdiri dari dua lapisan warna yang saling bertumpuk satu sama lain, kuning keemasan dan cokelat", "Belanda", "4"),
+    ("Lapis Legit", "[Spikuk, Spekkoek]", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Lapis_legit.jpg", "Lapis legit terdiri dari dua lapisan warna yang saling bertumpuk satu sama lain, kuning keemasan dan cokelat", "Belanda", "3"),
+    ("Martabak Manis", "[Kue Bandung, Terang Bulan, Martabak Bangka]", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Martabak_manis.jpg", "Martabak manis merupakan suatu jenis kue dadar berupa adonan tepung terigu berasa manis yang dipanggang, diberi topping, dan dilipat", "Pulau Bangka", "4"),
     ("Martabak Asin", "[Muttabak, Matabbak, Metabbak, Mutabbaq]", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Martabak_telor.jpg", "Martabak telur merupakan panganan dengan rasa gurih. Sayur, daging, dan berbagai bumbu lainnya digabung menjadi satu dalam sebuah kulit adonan padat yang ditipiskan secukupnya, kemudian dilipat, kemudian digoreng hingga matang.", "India", "5"),
-    ("Martabak Manis", "[Kue Bandung, Terang Bulan, Martabak Bangka]", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Martabak_manis.jpg", "Martabak manis merupakan suatu jenis kue dadar berupa adonan tepung terigu berasa manis yang dipanggang, diberi topping, dan dilipat", "Pulau Bangka", "6"),
-    ("Nastar", "-", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Nastar.jpg", "Kue Nastar umumnya berbentuk bulat dengan isian selain nanas.", "Belanda", "7"),
-    ("Onde-Onde", "[Jian Dui, Kuih Bom]", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Onde.jpg", "Onde Onde merupakan makanan tradisional ini berbentuk bulat dengan taburan wijen di permukaannya. Di dalam bulatan terdapat isian kacang hijau yang rasanya manis.", "Tiongkok", "8"),
-    ("Pukis", "-", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Pukis.jpg", "Kue pukis atau hanya disebut pukis adalah kue atau makanan ringan tradisional Indonesia yang terbuat dari adonan berbahan dasar tepung terigu dan dimasak dalam wajan cetakan khusus.", "Jawa Tengah", "9"), 
-    ("Serabi", "[Surabi, Sorabi]", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Serabi.jpg", "surabi merupakan jajanan tradisional Kota Bandung yang sudah ada sejak dulu. Dengan berbahan dasar tepung beras, tepung terigu dan santan kelapa. Di masak menggunakan tungku sehingga menghasilkan rasa dan aroma yang khas", "Jawa Barat", "10");
-
+    ("Nastar", "-", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Nastar.jpg", "Kue Nastar umumnya berbentuk bulat dengan isian selain nanas.", "Belanda", "6"),
+    ("Onde-Onde", "[Jian Dui, Kuih Bom]", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Onde.jpg", "Onde Onde merupakan makanan tradisional ini berbentuk bulat dengan taburan wijen di permukaannya. Di dalam bulatan terdapat isian kacang hijau yang rasanya manis.", "Tiongkok", "7"),
+    ("Pukis", "-", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Pukis.jpg", "Kue pukis atau hanya disebut pukis adalah kue atau makanan ringan tradisional Indonesia yang terbuat dari adonan berbahan dasar tepung terigu dan dimasak dalam wajan cetakan khusus.", "Jawa Tengah", "8"), 
+    ("Serabi", "[Surabi, Sorabi]", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Serabi.jpg", "surabi merupakan jajanan tradisional Kota Bandung yang sudah ada sejak dulu. Dengan berbahan dasar tepung beras, tepung terigu dan santan kelapa. Di masak menggunakan tungku sehingga menghasilkan rasa dan aroma yang khas", "Jawa Barat", "9"),
+    ("Kue Putri Salju", "Vanillekipferl", "https://storage.googleapis.com/traditiona-food-images/Image%20of%20Food/Kue_putri_salju.jpg", "Kue putri salju adalah sejenis kue kering yang berbentuk bulan sabit dan di atasnya diselimuti dengan gula halus seperti salju.", "Austria", "10");
